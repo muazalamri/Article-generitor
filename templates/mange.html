@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NetInfo</title>
+
+    <link rel="stylesheet" href="static/bootstrap.css" type="text/css" media="all" />
+</head>
+
+<body class="  ">
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+
+        <div class="content-page" id="content-page">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="header-title">main topic <form method="post"><input class="form-control rounded" name="topic" placeholder="main topic here .exmples:programming,cooking,traveling"></form></div>
+                        </div>
+                        <div class="card-body">
+                            <div id="topics">titles will be here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let topic_eria = document.getElementbyId('topics');
+        let in_title=document.getElementbyId('titleForm');
+        function set_topics(){
+            fetch('/topicer',{
+                method:"post",
+                data:new formData(in_title)
+            })
+            .then(response=>response.json())
+            .then(response=>alert(response));
+        }
+    </script>
+
+    <!-- offcanvas start -->
+
+</body>
+
+</html>
